@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="cards">
+
+        <div class="checkout">
+            <h1>Checkout</h1>
+            <h2>€ 300,00</h2>
+            <div class="saved-cards">
+                <h3>Saved Cards</h3>
+                <span>+ Add New</span>
+            </div>
+            <div class="infos">
+
+            </div>
+            <button class="delete">delete</button>
+        </div>
+
+        
+        <div class="card">
+            <h1>Add new card</h1>
+            <div class="add-card">
+                <h2>Enter details</h2>
+                <form action="">
+                    <label for="name">Name</label>
+                    <input type="text" id="name"  placeholder="JENNER ANNE" required>
+    
+                    <label for="card-number">Card number</label>
+                    <input type="text" name="" id="card-number" placeholder="4111 - 1111 - 1111 - 1111" required>
+    
+                    <label for="expiry-date">Expiry date</label>
+                    <input type="text" name="" id="expiry-date" placeholder="10/2028" required >
+    
+                    <label for="cvv">Cvv</label>
+                    <input type="number" name="" id="cvv" placeholder="045" required>
+                </form>
+                <div class="add-footer">
+                    <h2>Enter details</h2>
+                    <ion-icon name="radio-button-on-outline"></ion-icon>
+                </div>
+                
+            </div>
+            <button class="add">ADD</button>
+            <button class="save">SAVE</button>
+        </div>
+    </div>
+
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

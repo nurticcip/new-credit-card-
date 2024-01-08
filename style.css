@@ -1,0 +1,242 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #2D4E81;
+    font-family: sans-serif;
+}
+
+button{
+    border: none;
+}
+
+.cards{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card{
+    width: 390px;
+    height: 100vh;
+    background: url(./img/main-bg.png);
+    margin: 10px ;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.checkout{
+    width: 390px;
+    height: 100vh;
+    background: url(./img/main-bg.png);
+    margin: 10px ;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 70px 0;
+}
+
+.checkout h1{
+    color: #FFF;
+    font-size: 28px;
+    font-weight: 700;
+}
+.checkout h2{
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 10px 0;
+}
+
+.card h1{
+    color: #FFF;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+
+.save {
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24.519px; 
+    letter-spacing: 0.54px;
+    text-transform: uppercase;
+    padding: 12px 70px;
+    border-radius: 40px;
+    background: #F90;
+    transition: .7s;
+    display: none;
+}
+.add {
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24.519px; 
+    letter-spacing: 0.54px;
+    text-transform: uppercase;
+    padding: 12px 70px;
+    border-radius: 40px;
+    background: #F90;
+    transition: .7s;
+}
+
+.card button:active{
+    background: rgb(255, 172, 47);
+    color: black;
+}
+
+.add-card{
+    width: 345px;
+    height: 455px;
+    border-radius: 15px;
+    background: #FFF;   
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.add-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.add-footer{
+    color: #F90;
+}
+
+.add-card h2{
+    color: #F90;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 10px 0 20px 0;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+input{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.70);
+    padding: 5px 0;
+    text-transform: uppercase;
+}
+
+label{
+    padding: 10px 0;
+    color: rgba(0, 0, 0, 0.25);
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.saved-cards{
+    display: flex;
+    justify-content: space-between;
+    gap: 130px;
+}
+
+.saved-cards h3{
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 400;
+}
+.saved-cards span{
+    color: #F90;
+    text-align: right;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.infos{
+    width: 350px;
+    height: 500px;
+    margin: 10px;
+    overflow-y: auto;
+}
+
+.info-card{
+    width: 350px;
+    height: 190px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(40.864864349365234px);
+}
+
+
+
+.checkout button{
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24.519px; 
+    letter-spacing: 0.54px;
+    text-transform: uppercase;
+    padding: 12px 70px;
+    border-radius: 40px;
+    background: #F00;
+    transition: .7s;
+}
+
+.checkout button:active{
+    background: rgb(247, 42, 42);
+    color: rgb(0, 0, 0);
+}
+
+.card-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+.card-icon{
+    display: flex;
+    gap: 10px;
+}
+.card-icon ion-icon{
+    width: 25px;
+    height: 25px;
+    color: #fff;
+}
+
+.card-number h1{
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24.519px; 
+    letter-spacing: 1.6px;
+    padding: 0 20px;
+}
+
+.card-footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px; 
+}
+
+.card-footer h2{
+    color: #FFF;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24.519px;
+    text-transform: uppercase;
+}
+
+.card-footer h1 {
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24.519px; 
+    text-transform: uppercase;
+}
