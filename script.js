@@ -8,6 +8,28 @@ const delate = document.querySelector('.delete')
 const cardName = document.querySelector('.card-name')
 const infos = document.querySelector('.infos')
 const addNew = document.querySelector('span')
+const formInputs = document.querySelectorAll('.form__inputs input')
+
+const bew = JSON.parse(localStorage.getItem('card')) || []
+bew.forEach((el, idx)=> console.log(idx))
+
+getCard()
+
+delate.addEventListener('click', () => {
+    localStorage.removeItem('card'); 
+	getCard();
+})
+
+addNew.addEventListener('click', () => {
+    name.focus( )
+})
+
+name.addEventListener('input', () => {
+    let strName = name.value
+    if (strName.length > 21) {
+        name.value = strName.slice(0, 21)
+    }
+})
 
 number.addEventListener('input', () => {
     number.style.borderBottom = '' 
@@ -27,10 +49,6 @@ number.addEventListener('input', () => {
 	}
 });
 
-addNew.addEventListener('click', () => {
-    name.focus( )
-})
-
 date.addEventListener('input', () => {
     let str = date.value;
     if (str.length > 7) {
@@ -38,7 +56,6 @@ date.addEventListener('input', () => {
     } else {
       let res = '';
       for (let i = 0; i < str.length; i++) {
-        console.log(i);
         if (i === 2 && str.includes('/') !== true) {
           res += `/${str[i]}`;
         } else {
@@ -87,13 +104,29 @@ add.addEventListener('click', () => {
     
 })
 
+let one = 0
 
+save.addEventListener('click', () => {
+    let getRemove = JSON.parse(localStorage.getItem('card')) || [];
+    let newObject = {
+        name: name.value,
+        cardN: number.value,
+        expiry: date.value,
+        cvv: cvv.value
+    };
+    console.log(newObject);
+    getRemove.splice(one, 1, newObject);
+    localStorage.setItem('card', JSON.stringify(getRemove));
+    getCard();
+    formInputs.forEach(elem => elem.value = '')   
+    add.style.display = 'block';
+    save.style.display = 'none';
+});     
 
 function getCard() {
 	infos.innerHTML = '';
 	let getLocal = JSON.parse(localStorage.getItem('card')) || [];
 	getLocal.forEach((el, idx) => {
-
         const infoCard = document.createElement('div')
         infoCard.setAttribute('class', 'info-card')
 
@@ -129,20 +162,7 @@ function getCard() {
             cvv.value = el.cvv;
             save.style.display = 'block'
             add.style.display = 'none'
-            save.addEventListener('click', () => {
-                let getRemove = JSON.parse(localStorage.getItem('card')) || [];
-                let object = {
-                    name: name.value,
-                    cardN: number.value,
-                    expiry: date.value,
-                    cvv: cvv.value
-                };
-                getRemove.splice(idx, 1, object);
-				localStorage.setItem('card', JSON.stringify(getRemove));
-                getCard();
-                add.style.display = 'block'
-                save.style.display = 'none'
-            });
+            one = idx    
         })
 
         cardIcon.append(remove, edit)
@@ -167,36 +187,8 @@ function getCard() {
 
         infoCard.append(cardHeader, cardNumber, cardFooter)
 
-
-        infos.append(infoCard)
         infoCard.style.margin = '10px 0'
-
-
-
-
-
-
-
-        // const remove = document.createElement('div')
-        // remove.setAttribute('class', 'remove')
-        // const edit = document.createElement('div')
-        // edit.setAttribute('class', 'edit')           
-        // const nameH2 = document.createElement('div')
-        // nameH2.setAttribute('class', 'name-h2')
-        // const tillH2 = document.createElement('div')
-        // tillH2.setAttribute('class', 'till-h2')
-        // const expiryDate = document.createElement('div')
-        // expiryDate.setAttribute('class', 'expiry-date')
-
-        
-        // const nameH1 = document.createElement('div')
-        // nameH1.setAttribute('class', 'name-h1')
-        // const numberH1 = document.createElement('div')
-        // numberH1.setAttribute('class', 'number-h1')
-
-
-
-        
+        infos.append(infoCard)
 	});
 }
 
@@ -204,7 +196,6 @@ function delItem(n) {
 	let removeForElem = JSON.parse(localStorage.getItem('card')) || [];
 	removeForElem.splice(n, 1);
 	localStorage.setItem('card', JSON.stringify(removeForElem));
-	getCard();
+    getCard();
+    removeForElem.style.transition = '1s'
 }
-
-getCard()
